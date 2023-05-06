@@ -49,7 +49,6 @@ const App = () => {
 					onSubmitForm={onSubmitForm}
 				/>
 			</Section>
-
 			<Section title="Contacts">
 				{contacts.length ? (
 					<>
