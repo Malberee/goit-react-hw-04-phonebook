@@ -8,11 +8,12 @@ import ContactList from './ContactList'
 import Filter from './Filter'
 
 const App = () => {
-	const [contacts, setContacts] = useState(() => JSON.parse(localStorage.getItem('contacts')) ?? initialContacts)
+	const [contacts, setContacts] = useState(
+		() => JSON.parse(localStorage.getItem('contacts')) ?? initialContacts
+	)
 	const [filter, setFilter] = useState('')
 
 	useEffect(() => {
-		console.log('Updated contacts')
 		localStorage.setItem('contacts', JSON.stringify(contacts))
 	}, [contacts])
 
@@ -45,9 +46,7 @@ const App = () => {
 	return (
 		<>
 			<Section title="Phonebook">
-				<ContactForm
-					onSubmitForm={onSubmitForm}
-				/>
+				<ContactForm onSubmitForm={onSubmitForm} />
 			</Section>
 			<Section title="Contacts">
 				{contacts.length ? (
